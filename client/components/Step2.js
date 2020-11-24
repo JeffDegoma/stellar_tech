@@ -37,8 +37,7 @@ const Step2 = () => {
                     name="firstName" 
                     label="First Name"
             />
-            <Button type="submit" variant="primary" height="large" width="large"> Next </Button>
-            
+            <Button type="submit" variant="primary" height="large" width="large"> Next </Button>  
             </Form>
         </MainContainer>
     );

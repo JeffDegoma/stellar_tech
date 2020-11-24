@@ -23,6 +23,6 @@ app.use(session({
 
 ApiRoutes(app)
 
-console.log('what up 212' )
+console.log('what up 212 -Beasley' )
 
 app.listen(port, () => console.log(`Server is listening on ${port}`))

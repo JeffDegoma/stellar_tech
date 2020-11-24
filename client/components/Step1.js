@@ -14,6 +14,7 @@ const NameWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-content: center;
+    height: 20%;
     input {
         height: 42px;
         margin-top: 20px;
@@ -26,7 +27,7 @@ const NameWrapper = styled.div`
     }
     span:nth-child(1) {
         position: absolute;
-        left: 1%;
+        left: .5%;
         font-size: 12px;
         font-weight: 400;
     }
@@ -68,28 +69,25 @@ const Step1 = () => {
                 })} 
                     type="text" 
                     name="firstName" 
-                    label="First Name"
-                    
+                    label="First Name" 
                 />
                 {errors.firstName && <span>First Name is required</span>}
                 <span>Last name</span>
                 <input ref={register({
                 })} 
-                type="text" 
-                name="lastName"
-                label="Last name"
-                
+                    type="text" 
+                    name="lastName"
+                    label="Last name"    
                 />
                 {errors.lastName && <span>Last Name is required</span>}
                 </NameWrapper>
-                <span>Email name</span>
+                <span>Email</span>
                 <input ref={register({
                     required: true
                 })}
                     type="email"
                     name="email"
-                    label="Email"
-                    
+                    label="Email"  
                 />
                 {errors.email && <span>Email provided already exists </span>}
                 <span>

@@ -9,32 +9,14 @@ const FormContainer = styled.div`
     width: 100%;
     flex-flow: column;
     align-items: center;
-
-    p {
-        align-self: flex-start;
-        margin-left: 8%;
-        font-size: 11px;
-        line-height: 15.2px;
-        width: 40%;
-        font-weight: 200;
-        color: #868484;
-        margin-top: 1rem;
-    }
-
-    @media screen and (max-width: 1018px) {
-            height: 90%;
-            display: flex;
-            justify-content: space-evenly;        
-    }
 `
 
 const StyledForm = styled.form`
-
     display: flex;
     justify-content: space-evenly;
     flex-flow: column;
     width: 85%;
-    height: 90%;
+    height: 100%;
     
     input {
         height: 43px;
@@ -44,21 +26,30 @@ const StyledForm = styled.form`
         background: #F0EFEF;
         border-radius: 10px;
     }
+    // override default button styles
     button {
         margin-top: 4%;
         height: 3rem;
-        width: 8rem;
+        width: 10rem;
         box-shadow: 0px 8px 17px 2px rgba(0,0,0,0.14) , 0px 3px 14px 2px rgba(0,0,0,0.12) , 0px 5px 5px -3px rgba(0,0,0,0.2) ;
     }
-
-    
+    p {
+        align-self: flex-start;
+        margin-left: 0rem;
+        font-size: 11px;
+        line-height: 15.2px;
+        width: 14rem;
+        font-weight: 200;
+        color: #868484;
+        margin-top: 1rem;
+    }  
 
     @media screen and (max-width: 800px) {
         width: 90%;
         height: 65vh;
         margin: 0%;
         justify-content: space-evenly; 
-        box-shadow: none;
+        box-shadow: none; 
     }
 
 `
@@ -71,8 +62,8 @@ const Form = ({children, ...props}) => {
         <FormContainer>
             <StyledForm {...props}>
                 {children}
+            <Footer><p>We take your data privacy very seriously and we will not share your information with anyone else. By signing up you agree to our Terms & Conditions and Privacy Policy. </p></Footer>
             </StyledForm>
-        <Footer><p>We take your data privacy very seriously and we will not share your information with anyone else. By signing up you agree to our Terms & Conditions and Privacy Policy. </p></Footer>
         </FormContainer>
     )
 };

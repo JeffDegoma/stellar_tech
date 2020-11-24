@@ -11,11 +11,7 @@ const poolData = {
     ClientId: process.env.clientId
 }
 
-
-console.log(process.env.userPoolId)
-
 const userPool = new AWS_cognito.CognitoUserPool(poolData)
-
 
 export async function signUp(req, res) {
     const err = validationResult(req)
@@ -49,5 +45,4 @@ export async function signUp(req, res) {
         }
     })
 }
-
 
