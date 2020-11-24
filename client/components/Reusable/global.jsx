@@ -7,15 +7,9 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
     }
-    
 
-    }
+    
     html, body {
-       
-        @media screen and (max-width: 850px) {
-            &::before {
-                height: 42%;
-        }
 
     }
     `

@@ -4,7 +4,7 @@ const Button = styled.button`
 
     --props-variant-primary-background-color:  #1245A2;
     --props-variant-default-background-color: #454545;
-    --props-width-large: 30%;
+    --props-width-large: 43%;
     --props-width-default: 5%;
     --props-height-large: 10%;
     --props-height-default: 20px;
@@ -38,7 +38,7 @@ const Button = styled.button`
         "var(--props-fontsize-default)" };
     }
 
-    border-radius: 10px;
+    border-radius: 15px;
     border: none;
     outline: none;
     cursor: pointer;

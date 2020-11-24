@@ -13,7 +13,7 @@ module.exports = merge(common, {
         host: '0.0.0.0',
         port: 9000,
         historyApiFallback: true,
-        proxy: {'/api/form' : "http://localhost:3000"}
+        // proxy: {'/api/form' : "http://localhost:3000"}
       },
       devtool: 'inline-source-map',
       module: {

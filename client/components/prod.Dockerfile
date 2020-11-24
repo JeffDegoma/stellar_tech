@@ -4,7 +4,7 @@ WORKDIR /usr/local/app
 
 COPY package.*json package-lock.json ./
 
-# RUN npm audit fix
+RUN npm audit fix
 
 RUN npm i --production
 

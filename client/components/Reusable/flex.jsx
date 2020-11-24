@@ -10,6 +10,7 @@ const FlexDiv = styled.div `
 
     flex-flow: ${props => {
         if(props.flowColumn) return 'column'
+        else if(props.reverse) return 'row-reverse'
     }};
 
     justify-content: ${props => {
@@ -37,6 +38,7 @@ const FlexDiv = styled.div `
 `   
 
 export const Column = styled.div `
+    display: flex;
     width: ${props => {
         if (props.two) return '50%'
         else if (props.three) return '33.3%'
