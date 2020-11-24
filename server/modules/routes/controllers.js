@@ -1,13 +1,18 @@
+import dotenv from 'dotenv'
 import AWS_cognito from 'amazon-cognito-identity-js'
-import config from  '../../config/config.json'
 import validator from 'express-validator'
+
+dotenv.config()
 
 const {validationResult} = validator
 
 const poolData = {
-    UserPoolId: config.cognito.userPoolId,
-    ClientId: config.cognito.clientId
+    UserPoolId: process.env.userPoolId,
+    ClientId: process.env.clientId
 }
+
+
+console.log(process.env.userPoolId)
 
 const userPool = new AWS_cognito.CognitoUserPool(poolData)
 

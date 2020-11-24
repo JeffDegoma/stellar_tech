@@ -1,5 +1,4 @@
 import express from 'express'
-import fs from 'fs';
 import cors from 'cors'
 import ApiRoutes from './modules/index.js'
 import session from 'express-session'
@@ -24,5 +23,6 @@ app.use(session({
 
 ApiRoutes(app)
 
+console.log('what up 212' )
 
 app.listen(port, () => console.log(`Server is listening on ${port}`))

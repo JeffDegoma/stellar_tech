@@ -5,6 +5,8 @@ import * as controllers from './controllers.js'
 
 const { body } = validator
 
+
+
 //POST
 router.post('/signup', [
     body('email', 'Invalid Email').isEmail(),
