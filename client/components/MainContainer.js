@@ -39,7 +39,7 @@ const Left = styled(FlexDiv)`
     }
     @media screen and (max-width: 800px) {
         .logo {width: 100%; height: 13%; }
-  
+        height: 85vh;
     }
 `
 

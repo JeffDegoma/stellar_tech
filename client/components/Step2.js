@@ -3,6 +3,7 @@ import MainContainer from './MainContainer'
 import { useForm } from 'react-hook-form'
 import { useHistory } from 'react-router-dom'
 import Button from './Reusable/Button'
+import Input from './Input'
 
 import Form from './Form'
 
@@ -19,24 +20,19 @@ const Step2 = () => {
     return (
         <MainContainer>
             <Form onSubmit={handleSubmit(onSubmit)}>
-            <input ref={register({
+            <Input ref={register({
                 })} 
                     type="tel" 
                     name="phone" 
-                    label="phone"
+                    label="Phone Number"
             />
-            <input ref={register({
+            <Input ref={register({
                 })} 
                     type="tel" 
                     name="ss" 
-                    label="ss"
+                    label="Social Security Number"
             />
-            <input ref={register({
-                })} 
-                    type="text" 
-                    name="firstName" 
-                    label="First Name"
-            />
+       
             <Button type="submit" variant="primary" height="large" width="large"> Next </Button>  
             </Form>
         </MainContainer>

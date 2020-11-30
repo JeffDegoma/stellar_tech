@@ -1,14 +1,17 @@
 import React from 'react';
 import styled from 'styled-components'
 
-const FormContainer = styled.div`
+export const FormContainer = styled.div`
     display: flex;
     justify-content: space-around;
     align-content: center;
-    height: 50vh;
+    height: 23rem;
     width: 100%;
     flex-flow: column;
     align-items: center;
+    @media screen and (max-width: 800px) {
+        height: 75%;
+    }
 `
 
 const StyledForm = styled.form`
@@ -28,7 +31,7 @@ const StyledForm = styled.form`
     }
     // override default button styles
     button {
-        margin-top: 4%;
+        margin-top: 2%;
         height: 3rem;
         width: 10rem;
         box-shadow: 0px 8px 17px 2px rgba(0,0,0,0.14) , 0px 3px 14px 2px rgba(0,0,0,0.12) , 0px 5px 5px -3px rgba(0,0,0,0.2) ;
@@ -45,16 +48,15 @@ const StyledForm = styled.form`
     }  
 
     @media screen and (max-width: 800px) {
-        width: 90%;
-        height: 65vh;
+        width: 95%;
+        height: 70vh;
         margin: 0%;
         justify-content: space-evenly; 
         box-shadow: none; 
     }
-
 `
 
-const Footer = styled.div`
+export const Footer = styled.div`
     height: 4rem;
 `
 const Form = ({children, ...props}) => {
@@ -62,7 +64,9 @@ const Form = ({children, ...props}) => {
         <FormContainer>
             <StyledForm {...props}>
                 {children}
-            <Footer><p>We take your data privacy very seriously and we will not share your information with anyone else. By signing up you agree to our Terms & Conditions and Privacy Policy. </p></Footer>
+            <Footer>
+                <p>We take your data privacy very seriously and we will not share your information with anyone else. By signing up you agree to our Terms & Conditions and Privacy Policy. </p>
+            </Footer>
             </StyledForm>
         </FormContainer>
     )
