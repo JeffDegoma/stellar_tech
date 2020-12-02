@@ -17,7 +17,6 @@ const App = () => {
                 <Route exact path="/step3" component={Step3}></Route>
             </Switch>
         </Router>
-        
     </>
     )
 }

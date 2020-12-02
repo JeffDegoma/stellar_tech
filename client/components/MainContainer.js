@@ -3,12 +3,10 @@ import FlexDiv from '../components/Reusable/flex'
 import BreadCrumbs from './Reusable/Breadcrumbs'
 import styled from 'styled-components'
 import img from '../assets/images/stellar-technology-logo.jpg';
+import {Link} from 'react-router-dom'
+import Right from './Right'
 
 
-const Background = styled(FlexDiv)`
-    width: 100%;
-    background: #1245A2;
-`
 
 const Left = styled(FlexDiv)`
     height: 100vh;
@@ -41,17 +39,22 @@ const Left = styled(FlexDiv)`
         .logo {width: 100%; height: 13%; }
         height: 85vh;
     }
-`
+    `
+    
 
-const MainContainer = ({children}) => {
+
+const MainContainer = ({children, ...props}) => {
     return (
-        <Background>
+        <>
             <Left>
-            <div className="logo"><img src={img} /></div>
-            <BreadCrumbs />
-                {children}
+                <Link to={`/`}> <div className="logo"><img src={img} /></div></Link>
+                <BreadCrumbs />
+                    {children}
             </Left>
-        </Background>
+            <Right image={props.image}
+                   text={props.text}
+            />
+        </>
     );
 };
 

@@ -18,8 +18,8 @@ const StyledForm = styled.form`
     display: flex;
     justify-content: space-evenly;
     flex-flow: column;
-    width: 85%;
-    height: 100%;
+    height: 110%;
+    width: 75%;
     
     input {
         height: 43px;
@@ -41,14 +41,13 @@ const StyledForm = styled.form`
         margin-left: 0rem;
         font-size: 11px;
         line-height: 15.2px;
-        width: 14rem;
+        width: 16rem;
         font-weight: 200;
         color: #868484;
         margin-top: 1rem;
     }  
 
     @media screen and (max-width: 800px) {
-        width: 95%;
         height: 70vh;
         margin: 0%;
         justify-content: space-evenly; 

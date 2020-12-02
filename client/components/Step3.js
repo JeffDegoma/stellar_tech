@@ -5,6 +5,8 @@ import { useForm } from 'react-hook-form'
 import Button from './Reusable/Button'
 import Input from './Input'
 import styled from 'styled-components'
+import img from '../assets/icons/large-plant.svg'
+
 
 const Step3Container = styled(FormContainer)`
     display: flex;
@@ -33,12 +35,14 @@ const Step3Container = styled(FormContainer)`
     }
 `
 
-const Step3 = ({children}) => {
+const Step3 = () => {
 
     const {register} = useForm()
 
     return (
-        <MainContainer>
+        <MainContainer  image={img}
+                        text={`Thank you`}
+        >
             <Step3Container>
                 <h1>Thank You.</h1>
             <Button type="submit" variant="primary" height="large" width="large"> Complete </Button>

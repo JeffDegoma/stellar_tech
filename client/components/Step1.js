@@ -1,13 +1,17 @@
-import React from 'react';
+import React from 'react'
 import { useForm } from 'react-hook-form'
 import { useHistory } from 'react-router-dom'
 import Form from './Form'
 import MainContainer from './MainContainer'
+import Right from './Right'
 import Button from './Reusable/Button'
 import styled from 'styled-components'
-import regeneratorRuntime from "regenerator-runtime";
+import regeneratorRuntime from "regenerator-runtime"
 import axios from 'axios'
 import Input from './Input'
+import {yupResolver} from '@hookform/resolvers/yup'
+import * as yup from 'yup'
+import img from '../assets/icons/small-plant.svg'
 
 
 const NameWrapper = styled.div`
@@ -19,7 +23,7 @@ const NameWrapper = styled.div`
 
     input {
         height: 44px;
-        margin-top: 10px;
+        margin-top: 3px;
         width: 90%;
         font-size: 1.5em;
         border-radius: 10px;
@@ -27,6 +31,8 @@ const NameWrapper = styled.div`
         outline: none;
         background: #F0EFEF;
     }
+
+
     @media screen and (max-width: 800px) {
         display: inline-block;
         input {
@@ -35,28 +41,42 @@ const NameWrapper = styled.div`
     }
 
 `
+const schema = yup.object().shape({
+    email: yup
+    .string()
+    .required('Email is required'),
+    password: yup
+    .string()
+    .required('Password is required')
+})
 
 const Step1 = () => {
     
-    const {register, handleSubmit, errors, setError} = useForm()
+    const {register, handleSubmit, errors, setError} = useForm({
+        mode: 'onBlur',
+        resolver: yupResolver(schema)
+    })
     const history = useHistory()
     
     const onSubmit = async (data) => {
-        // await axios.post('http://localhost:3000/api/form/signup', data )
-        // .then(res =>{
-        //     if(res.data['signup-errors']){
-        //         res.data['signup-errors'].forEach(err => {
-        //             setError('email', err.message) 
-        //         })
-        //     } else {
-        //         console.log(res.data)
+        await axios.post('http://localhost:3000/api/form/signup', data )
+        .then(res =>{
+            if(res.data['signup-errors']){
+                res.data['signup-errors'].forEach(err => {
+                    console.log(err.message)
+                    setError('password', {message: err.message})
+                })
+            } else {
+                console.log(res.data)
                 history.push('/step2')
-            // }
-        // })
-
+            }
+        })
     }
+
     return (
-        <MainContainer>
+        <MainContainer  image={img} 
+                        text={`Let's create your account.`}
+        >
             <Form onSubmit={handleSubmit(onSubmit)}>
                 <NameWrapper>
                 <Input ref={register({
@@ -75,22 +95,19 @@ const Step1 = () => {
                 {errors.lastName && <span>Last Name is required</span>}
                 </NameWrapper>
                 <Input ref={register({
-                    required: true
                 })}
                     type="email"
                     name="email"
-                    label="Email"  
+                    label="Email"
+                    errors={errors.email} 
                 />
-                {errors.email && <span>Email provided already exists </span>}
                 <Input ref={register({
-                    required: true
                 })}
                     type="password"
                     name="password"
                     label="Password"
+                    errors={errors.password} 
                 />
-                {errors.password && <span>Password is required</span>}
-
                 <Button type="submit" variant="primary" height="large" width="large"> Next </Button>
             </Form>
         </MainContainer>

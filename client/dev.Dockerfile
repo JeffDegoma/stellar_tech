@@ -4,13 +4,9 @@ WORKDIR /usr/local/app
 
 COPY package.*json package-lock.json ./
 
-# RUN npm audit fix
-
 RUN npm i --production
 
 COPY . ./
-
-EXPOSE 80
 
 RUN npm run build
 

@@ -4,8 +4,8 @@ import { useForm } from 'react-hook-form'
 import { useHistory } from 'react-router-dom'
 import Button from './Reusable/Button'
 import Input from './Input'
-
 import Form from './Form'
+import img from '../assets/icons/medium-plant.svg'
 
 
 const Step2 = () => {
@@ -18,7 +18,9 @@ const Step2 = () => {
     }
 
     return (
-        <MainContainer>
+        <MainContainer image={img}
+                       text={`Grow with stellar`}
+        >
             <Form onSubmit={handleSubmit(onSubmit)}>
             <Input ref={register({
                 })} 
