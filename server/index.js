@@ -4,6 +4,7 @@ import ApiRoutes from './modules/index.js'
 import session from 'express-session'
 import fetch from 'node-fetch'
 
+
 global.fetch = fetch;
 
 const app = express()
@@ -21,8 +22,8 @@ app.use(session({
     cookie: { maxAge: 60480 }
 }))
 
+
 ApiRoutes(app)
 
-console.log('what up 212 -Beasley' )
 
 app.listen(port, () => console.log(`Server is listening on ${port}`))
