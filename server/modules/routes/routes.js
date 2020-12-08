@@ -6,7 +6,6 @@ import * as controllers from './controllers.js'
 const { body } = validator
 
 router.get('/', (req, res) => {
-    console.log(res)
     res.end('Merry Christmas')
 })
 

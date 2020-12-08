@@ -5,12 +5,11 @@ import session from 'express-session'
 import fetch from 'node-fetch'
 
 
-global.fetch = fetch;
-
 const app = express()
 const port = 3000
 app.use(cors())
 
+global.fetch = fetch;
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))

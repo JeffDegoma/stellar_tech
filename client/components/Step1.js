@@ -59,7 +59,7 @@ const Step1 = () => {
     const history = useHistory()
     
     const onSubmit = async (data) => {
-        await axios.post('http://localhost:3000/api/form/signup', data )
+        await axios.post('/api/form/signup', data ) //http://localhost:3000/api/form/signup
         .then(res =>{
             if(res.data['signup-errors']){
                 res.data['signup-errors'].forEach(err => {
