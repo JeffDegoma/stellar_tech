@@ -7,6 +7,7 @@ const Wrapper = styled.div `
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-bottom: 1.5%;
 
     ${Column} {
         flex-direction: column;
@@ -32,27 +33,31 @@ const Wrapper = styled.div `
     }
     p {
         font-weight:  600;
-        font-size: 16px;
+        font-size: 14px;
         margin-bottom: 10%;
     }
     span {
-        font-size: 14px;
+        font-size: 12px;
         width: 100%;
         line-height: 17px;
-        letter-spacing: 1.2px;
+        letter-spacing: 1px;
         text-align: left;
     }
  
 
-  
-
     @media screen and (max-width: 800px) {
-        width: 30%;
-        display: none;
+
+        ${Column} {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            height: 75px;
+            
+        }
 
         ul {
             display: flex;
-            margin: 0%;
             list-style: none;
             flex-direction: column;
 
@@ -62,20 +67,20 @@ const Wrapper = styled.div `
             }
         }
         svg {
-            width: 23%;
-            height: 16%;
-            margin-bottom: 10%;
+            width: 10%;
+            height: 60%;
+            margin-bottom: 0;
         }
         p {
             font-weight:  600;
             font-size: 16px;
             margin-bottom: 10%;
+            display: none;
         }
         span {
             font-size: 14px;
-            width: 100%;
+            width: 65%;
             line-height: 17px;
-            letter-spacing: 1.1px;
             text-align: left;
         }
         .last_span{

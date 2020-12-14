@@ -6,9 +6,13 @@ const InputContainer = styled.div`
     display: flex;
     flex-flow: column;
     justify-content: space-evenly;
+    overflow: hidden;
+    display: inline-block;
+    
+
     span {
+        margin-right: 3%;
         margin-bottom: 1%;
-        margin-right: 1%;
         font-size: 14px;
     }
     .error {
@@ -16,8 +20,14 @@ const InputContainer = styled.div`
         color: red;
     }
     input {
-        margin-bottom: 2%;
+        margin-bottom: 3%;
         width: 95%;
+    }
+    @media screen and (max-width: 800px) {
+        
+        input {
+            width: 100%;
+        }
     }
     
 `

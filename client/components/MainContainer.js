@@ -8,14 +8,15 @@ import Right from './Right'
 
 
 
-const Left = styled(FlexDiv)`
+export const Left = styled(FlexDiv)`
     height: 100vh;
+    flex-flow: column;
     width: 55%;
     background: #fff;
 
     .logo {
         width: 100%;
-        height: 5rem;
+        height: 8rem;
     }
     .logo > img {
         width: 19rem;
@@ -28,6 +29,11 @@ const Left = styled(FlexDiv)`
         margin-bottom: 5%;
     }
     h2 {
+        align-self: center;
+        margin-bottom: 3%;
+        font-size: 26px;
+    }
+    h2 {
         font-weight: 500;
     }
 
@@ -37,7 +43,7 @@ const Left = styled(FlexDiv)`
     }
     @media screen and (max-width: 800px) {
         .logo {width: 100%; height: 13%; }
-        height: 85vh;
+        height: 100%;
     }
     `
     
@@ -48,11 +54,13 @@ const MainContainer = ({children, ...props}) => {
         <>
             <Left>
                 <Link to={`/`}> <div className="logo"><img src={img} /></div></Link>
+                <h2>Let's create your account.</h2>
                 <BreadCrumbs />
                     {children}
             </Left>
             <Right image={props.image}
                    text={props.text}
+                   headline={props.headline}
             />
         </>
     );

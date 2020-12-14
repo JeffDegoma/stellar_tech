@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form'
 import { useHistory } from 'react-router-dom'
 import Form from './Form'
 import MainContainer from './MainContainer'
-import Right from './Right'
 import Button from './Reusable/Button'
 import styled from 'styled-components'
 import regeneratorRuntime from "regenerator-runtime"
@@ -19,7 +18,8 @@ const NameWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-content: center;
-    margin-bottom: 1%;
+    overflow: hidden;
+
 
     input {
         height: 44px;
@@ -36,7 +36,7 @@ const NameWrapper = styled.div`
     @media screen and (max-width: 800px) {
         display: inline-block;
         input {
-            width: 95%;
+            width: 100%;
         }
     }
 
@@ -59,7 +59,7 @@ const Step1 = () => {
     const history = useHistory()
     
     const onSubmit = async (data) => {
-        await axios.post('/api/form/signup', data ) //http://localhost:3000/api/form/signup
+        await axios.post('http://localhost:3000/api/form/signup', data ) //http://localhost:3000/api/form/signup // api/form/signup
         .then(res =>{
             if(res.data['signup-errors']){
                 res.data['signup-errors'].forEach(err => {
@@ -68,14 +68,16 @@ const Step1 = () => {
                 })
             } else {
                 console.log(res.data)
-                history.push('/step2')
+                history.push('/step3')
             }
         })
     }
 
     return (
-        <MainContainer  image={img} 
-                        text={`Let's create your account.`}
+        <MainContainer  
+                        text={`What if you can support the charities that you care about with one donation?`}
+                        headline={'Stellar Donor Advised Fund'}
+                        image={img} 
         >
             <Form onSubmit={handleSubmit(onSubmit)}>
                 <NameWrapper>
@@ -83,7 +85,7 @@ const Step1 = () => {
                 })} 
                     type="text" 
                     name="firstName" 
-                    label="First Name" 
+                    label="First name" 
                 />
                 {errors.firstName && <span>First Name is required</span>}
                 <Input ref={register({

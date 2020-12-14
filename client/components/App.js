@@ -13,7 +13,7 @@ const App = () => {
         <Router>
             <Switch>
                 <Route exact path="/" component={Step1}></Route>
-                <Route exact path="/step2" component={Step2}></Route>
+                {/* <Route exact path="/step2" component={Step2}></Route> */}
                 <Route exact path="/step3" component={Step3}></Route>
             </Switch>
         </Router>

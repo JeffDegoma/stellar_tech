@@ -5,7 +5,6 @@ export const FormContainer = styled.div`
     display: flex;
     justify-content: space-around;
     align-content: center;
-    height: 23rem;
     width: 100%;
     flex-flow: column;
     align-items: center;
@@ -20,7 +19,7 @@ const StyledForm = styled.form`
     flex-flow: column;
     height: 110%;
     width: 75%;
-    
+
     input {
         height: 43px;
         font-size: 1.5em;
@@ -52,6 +51,7 @@ const StyledForm = styled.form`
         margin: 0%;
         justify-content: space-evenly; 
         box-shadow: none; 
+        
     }
 `
 

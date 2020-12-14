@@ -26,6 +26,7 @@ const Container = styled.div `
         if (props.small) return '15px'
         return '25px'
     }};
+    
 
     //set media queries
 
